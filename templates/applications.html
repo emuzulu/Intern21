@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Date of Application</th>
+        </tr>
+
+
+        {% for app in apps %}
+        <tr>
+            <td>"{{ app.company }}"</td>
+            <td>"{{ app.role}}"</td>
+            <td>"{{app.date}}"</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}

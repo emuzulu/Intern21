@@ -2,21 +2,31 @@
 
 {% block body %}
 
-    <table>
-        <tr>
-            <th>Company</th>
-            <th>Role</th>
-            <th>Date of Application</th>
-        </tr>
+    <table class="content-table">
+        <thead>
+            
+            <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Date of Application</th>
+            </tr>
+
+        </thead>
+      
+        <tbody>
+
+            {% for app in apps %}
+            <tr>
+                <td>{{ app.company }}</td>
+                <td>{{ app.role}}</td>
+                <td>{{app.date.date()}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
 
 
-        {% for app in apps %}
-        <tr>
-            <td>"{{ app.company }}"</td>
-            <td>"{{ app.role}}"</td>
-            <td>"{{app.date}}"</td>
-        </tr>
-        {% endfor %}
+       
 
     </table>
 

@@ -19,7 +19,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/application', method=['POST', 'GET'])
+@app.route('/application')# method=['POST', 'GET'])
 def apps():
     error = None
     companies = Application.query.all()

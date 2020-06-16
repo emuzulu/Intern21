@@ -2,34 +2,49 @@
 
 {% block body %}
 
-    <table class="content-table">
-        <thead>
-            
-            <tr>
-                <th>Company</th>
-                <th>Role</th>
-                <th>Date of Application</th>
-            </tr>
+    
+    <div class="item-table">
 
-        </thead>
-      
-        <tbody>
+        <table class="content-table">
+            <thead>
+                
+                <tr>
+                    <th>COMPANY</th>
+                    <th>ROLE</th>
+                    <th>DATE OF APPLICATION</th>
+                    <th></th>
+                </tr>
+    
+            </thead>
+          
+            <tbody>
+    
+                {% for app in apps %}
+                <tr>
+                    <td>{{ app.company }}</td>
+                    <td>{{ app.role}}</td>
+                    <td>{{app.date.date()}}</td>
+                    <td><input class="delete" type="button" value=Delete></td>
+                </tr>
+                {% endfor %}
+    
+                <tr>
+                    <td><input class="text-input" type="text" placeholder="Company"></td>
+                    <td><input class="text-input" type="text" placeholder="Role"></td>
+                    <td><input type="datetime-local"></td>
+                    <td><input type="button" class="add" value="Add"></td>
+                </tr>
+    
+            </tbody>
+    
+    
+           
+    
+        </table>
+    
+    </div>
 
-            {% for app in apps %}
-            <tr>
-                <td>{{ app.company }}</td>
-                <td>{{ app.role}}</td>
-                <td>{{app.date.date()}}</td>
-                <td><input type="submit">Delete</td>
-            </tr>
-            {% endfor %}
 
-        </tbody>
-
-
-       
-
-    </table>
-
+   
 
 {% endblock %}

@@ -24,15 +24,15 @@
                     <td>{{ app.company }}</td>
                     <td>{{ app.role}}</td>
                     <td>{{app.date.date()}}</td>
-                    <td><input class="delete" type="button" value=Delete></td>
+                    <td><input id = {{app.id}} class="delete" type="button" value=Delete></td>
                 </tr>
                 {% endfor %}
     
                 <tr>
-                    <td><input class="text-input" type="text" placeholder="Company"></td>
-                    <td><input class="text-input" type="text" placeholder="Role"></td>
-                    <td><input type="datetime-local"></td>
-                    <td><input type="button" class="add" value="Add"></td>
+                    <td><input id = "company" class="text-input" type="text" placeholder="Company"></td>
+                    <td><input id = "role" class="text-input" type="text" placeholder="Role"></td>
+                    <td><input id = "time" type="datetime-local"></td>
+                    <td><input id = "add" type="button" class="add" value="Add"></td>
                 </tr>
     
             </tbody>

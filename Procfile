@@ -1,2 +1,2 @@
-web: python __init__.py
+web: gunicorn hello:app
 heroku ps:scale web=1

@@ -7,4 +7,3 @@ def encrypt(s):
     m.update(binary_string)
     return m.hexdigest()
 
-    

@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Date
 from database import Base
 from datetime import datetime
 from datetime import date
+from crypt import encrypt
 
 class Application(Base):
     __tablename__ = 'applications'

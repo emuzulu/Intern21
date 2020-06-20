@@ -19,15 +19,10 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/application')# method=['POST', 'GET'])
+@app.route('/application')# method=['POST'i, 'GET'])
 def apps():
-    error = None
     companies = Application.query.all()
-    if request.form == "POST":
-        print(request.form['id'])
-    else:
-        error = "Invalid action"
-    return render_template("applications.html", error=error, apps=companies)
+    return render_template("applications.html",  apps=companies)
 
 
 

@@ -19,9 +19,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/application')# method=['POST'i, 'GET'])
+@app.route('/application', methods=['POST', 'GET'])
 def apps():
     companies = Application.query.all()
+    if request.method == "POST":
+        
     return render_template("applications.html",  apps=companies)
 
 

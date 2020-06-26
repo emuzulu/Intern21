@@ -21,23 +21,26 @@
     
                 {% for app in apps %}
                 <tr>
-                    <td>{{ app.company }}</td>
-                    <td>{{ app.role}}</td>
-                    <td>{{app.date.date()}}</td>
-                    <td><input id = {{app.id}} class="delete" type="button" value=Delete></td>
+                    <form method="POST">
+                        <td>{{ app.company }}</td>
+                        <td>{{ app.role}}</td>
+                        <td>{{app.date.date()}}</td>
+                        <td><input name = "app_id" class="delete" type="submit" value="Delete"></td>
+                    </form>/
+
                 </tr>
                 {% endfor %}
     
                 <tr>
                     <form method="POST">
-                        <td><input id = "company" class="text-input" type="text" placeholder="Company"></td>
-                        <td><input id = "role" class="text-input" type="text" placeholder="Role"></td>
+                        <td><input name= "company" id = "company" class="text-input" type="text" placeholder="Company"></td>
+                        <td><input name="role" id = "role" class="text-input" type="text" placeholder="Role"></td>
                         <td> </td>
                         <td> <input class="add" type="submit" value="Submit"></td>
                     </form>
                    
                 </tr>
-    
+
             </tbody>
     
     

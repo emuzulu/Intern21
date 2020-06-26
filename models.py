@@ -11,7 +11,7 @@ class Application(Base):
     role = Column(String(20), nullable=False)
     date = Column(DateTime(timezone=False), nullable=False)
 
-    def __init__(self, company, role, date):
+    def __init__(self, company, role):
         self.company = company
         self.role = role
         self.date = datetime.now()
